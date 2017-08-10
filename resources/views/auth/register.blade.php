@@ -29,7 +29,8 @@
                             <label for="phone" class="col-md-4 control-label">Phone number</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="string"  class="form-control" name="phone" value="{{ old('phone') }}" required>
+                                <input id="phone" type="string" oninput="phone_number()" class="form-control" name="phone" value="{{ old('phone') }}" required>
+                                <div id="phone_error" style="color:#FF0000"></div>
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
@@ -76,6 +77,8 @@
                         </div>
 
                         <input id="account_state_id" type="hidden" class="form-control" name="account_state_id" value="1" >
+
+                        <script type="text/javascript" src="{{ URL::asset('js/SignUp.js') }}"></script>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
