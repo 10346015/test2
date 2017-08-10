@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -24,15 +25,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('phonenumber') ? ' has-error' : '' }}">
-                            <label for="phonenumber" class="col-md-4 control-label">Phone number</label>
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                            <label for="phone" class="col-md-4 control-label">Phone number</label>
 
                             <div class="col-md-6">
-                                <input id="phonenumber" type="string" class="form-control" name="phonenumber" value="{{ old('phonenumber') }}" required>
+                                <input id="phone" type="string"  class="form-control" name="phone" value="{{ old('phone') }}" required>
 
-                                @if ($errors->has('phonenumber'))
+                                @if ($errors->has('phone'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('phonenumber') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -73,6 +74,8 @@
                                 @endif
                             </div>
                         </div>
+
+                        <input id="account_state_id" type="hidden" class="form-control" name="account_state_id" value="1" >
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

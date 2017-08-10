@@ -10,15 +10,15 @@
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('phonenumber') ? ' has-error' : '' }}">
-                            <label for="phonenumber" class="col-md-4 control-label">Phone number</label>
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                            <label for="phone" class="col-md-4 control-label">Phone number</label>
 
                             <div class="col-md-6">
-                                <input id="phonenumber" type="phonenumber" class="form-control" name="phonenumber" value="{{ old('phonenumber') }}" required autofocus>
+                                <input id="phone" type="phone" class="form-control" name="phone" value="{{ old('phone') }}" required autofocus>
 
-                                @if ($errors->has('phonenumber'))
+                                @if ($errors->has('phone'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('phonenumber') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                 @endif
                             </div>
