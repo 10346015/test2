@@ -46,6 +46,7 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
+                                <div id="password_error" style="color:#FF0000"></div>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -59,7 +60,8 @@
                             <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" oninput="check_password()" class="form-control" name="password_confirmation" required>
+                                <script type="text/javascript" src="{{ URL::asset('js/SignUpPassword.js') }}"></script>
                             </div>
                         </div>
 
@@ -67,7 +69,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" oninput="test()" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" oninput="check_email()" class="form-control" name="email" value="{{ old('email') }}" required>
                                 <div id="email_error" style="color:#FF0000"></div>
                                 <script type="text/javascript" src="{{ URL::asset('js/SignUpEmail.js') }}"></script>
 

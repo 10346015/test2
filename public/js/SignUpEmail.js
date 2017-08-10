@@ -1,4 +1,4 @@
-function test(){
+function check_email(){
   var email = document.getElementById('email').value;
   var email_error =document.getElementById('email_error');
   emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
