@@ -31,6 +31,7 @@
                             <div class="col-md-6">
                                 <input id="phone" type="string" oninput="phone_number()" class="form-control" name="phone" value="{{ old('phone') }}" required>
                                 <div id="phone_error" style="color:#FF0000"></div>
+                                <script type="text/javascript" src="{{ URL::asset('js/SignUpPhone.js') }}"></script>
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
@@ -66,7 +67,9 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" oninput="test()" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <div id="email_error" style="color:#FF0000"></div>
+                                <script type="text/javascript" src="{{ URL::asset('js/SignUpEmail.js') }}"></script>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -78,7 +81,7 @@
 
                         <input id="account_state_id" type="hidden" class="form-control" name="account_state_id" value="1" >
 
-                        <script type="text/javascript" src="{{ URL::asset('js/SignUp.js') }}"></script>
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
