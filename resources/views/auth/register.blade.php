@@ -15,7 +15,9 @@
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="text" oninput="check_name()" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <div id="name_error" style="color:#FF0000"></div>
+                                <script type="text/javascript" src="{{ URL::asset('js/SignUpName.js') }}"></script>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -45,8 +47,10 @@
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" oninput="check_password()" class="form-control" name="password" required>
                                 <div id="password_error" style="color:#FF0000"></div>
+                                <div id="password_confirm_error" style="color:#FF0000"></div>
+                                <script type="text/javascript" src="{{ URL::asset('js/SignUpPassword.js') }}"></script>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -60,8 +64,8 @@
                             <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" oninput="check_password()" class="form-control" name="password_confirmation" required>
-                                <script type="text/javascript" src="{{ URL::asset('js/SignUpPassword.js') }}"></script>
+                                <input id="password-confirm" type="password" oninput="check_password_confirm()" class="form-control" name="password_confirmation" required>
+                                <script type="text/javascript" src="{{ URL::asset('js/SignUpPasswordConfirm.js') }}"></script>
                             </div>
                         </div>
 

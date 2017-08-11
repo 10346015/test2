@@ -1,17 +1,16 @@
 function check_password(){
   var password = document.getElementById('password').value;
-  var password_confirm = document.getElementById('password-confirm').value;
-  var password_error = document.getElementById('password_error');
-  if (password_confirm != ""){
-    if (password_confirm != password){
-      password_error.innerHTML = 'The password confirmation does not match.';
-    }
-    else{
-      password_error.innerHTML = '';
-    }
+  var passwor_error = document.getElementById('password_error');
+  if (password.length < 6){
+    passwor_error.innerHTML = 'The password must be at least 6.';
+  }
+  else if (password.length >30){
+    passwor_error.innerHTML = 'The password may not be greater than 30.';
   }
   else{
-    password_error.innerHTML = '';
+    passwor_error.innerHTML = '';
   }
-
+  if (password == ""){
+    passwor_error.innerHTML = '';
+  }
 }

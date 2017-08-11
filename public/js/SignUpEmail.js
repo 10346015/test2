@@ -11,4 +11,7 @@ function check_email(){
   if (email == ""){
     email_error.innerHTML = ''
   }
+  else if (email.length > 200){
+    email_error.innerHTML = 'The email may not be greater than 200.'
+  }
 }
